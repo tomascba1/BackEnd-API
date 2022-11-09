@@ -1,0 +1,76 @@
+{{>header}}
+<h2 class="contact">Register your account</h2>
+                <form action="/users/register" method="POST">
+                    <ul>
+                        <li>
+                            <label class="mt-2" for="username">Username:</label>
+                        </li>
+                        <li>
+                            <input type="text" id="username" name="username" class="form-control" value="{{formData.username}}">
+                        </li>
+                        {{#filter arrWarnings 'username'}}
+                        <p class="warning">{{msg}}</p>
+                        {{/filter}}
+                        <li>    
+                            <label class="mt-2" for="name">Name</label>
+                        </li>
+                        <li>
+                            <input type="text" id="name" name="name" value="{{formData.name}}" class="form-control" autofocus>
+                        </li>
+                        {{#filter arrWarnings 'name'}}
+                        <p class="warning">{{msg}}</p>
+                        {{/filter}}
+                        <li>    
+                            <label class="mt-2" for="lastName">Last Name</label>
+                        </li>
+                        <li>
+                            <input type="text" id="lastName" name="lastName" class="form-control" value="{{formData.lastName}}">
+                        </li>
+                        {{#filter arrWarnings 'lastName'}}
+                        <p class="warning">{{msg}}</p>
+                        {{/filter}}
+                        <li>    
+                            <label class="mt-2" for="email">Email:</label>
+                        </li>
+                        <li>
+                            <input type="text" id="email" name="email" class="form-control" value="{{formData.email}}">
+                        </li>
+                        {{#filter arrWarnings 'email'}}
+                        <p class="warning">{{msg}}</p>
+                        {{/filter}}
+                        <div>
+                        <li>   
+                            <label class="mt-2" for="pass">Password:</label>
+                        </li>
+                        <li>
+                            <input type="password" id="pass" class="form-control" name="pass">
+                        </li>
+                        </div>
+                        {{#filter arrWarnings 'pass'}}
+                        <p class="warning">{{msg}}</p>
+                        {{/filter}}
+                        <p class="blockquote-footer mt-1">Password must have:</p>
+                        <p class="blockquote-footer">• At least 6 characters</p>
+                        <p class="blockquote-footer">• At least one number</p>
+                        <p class="blockquote-footer">• Upper and lowercase letters</p>
+                        <li>    
+                            <label class="mt-2" for="confirm">Confirm password:</label>
+                        </li>
+                        <li>
+                            <input type="password" id="confirm" class="form-control" name="confirm">
+                        </li>
+                        <p class="warning">{{message}}</p>
+                        <div class="row mt-3 text-center">
+                            <div class="col">
+                                <li class="button">
+                                <button class="btn btn-primary" type="submit">Register my account</button>
+                                </li>   
+                            </div>
+                            <div class="col">
+                                <li class="button">
+                                <a href="/users/login" class="btn btn-warning">Already have account</a>
+                                </li>   
+                            </div>
+                        </div>
+                    </ul>
+                </form>

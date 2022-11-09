@@ -1,0 +1,39 @@
+     {{>header}}   
+        <main>
+            <h2 class="contact">Contact Us</h2>
+                <form action="/contact" method="POST">
+                <p class="text-center success">{{message}}</p>
+                    <ul>
+                        <li>    
+                            <label class="mt-2" for="name">Full Name:</label>
+                        </li>
+                        <li>
+                            <input type="text" id="name" name="name" class="form-control" autofocus value="{{formData.name}}">
+                        </li>
+                        {{#filter arrWarnings 'name'}}
+                        <p class="warning">{{msg}}</p>
+                        {{/filter}}
+                        <li>    
+                            <label class="mt-2" for="email">Email:</label>
+                        </li>
+                        <li>
+                            <input type="text" id="email" name="email" class="form-control" value="{{formData.email}}">
+                        </li>
+                        {{#filter arrWarnings 'email'}}
+                        <p class="warning">{{msg}}</p>
+                        {{/filter}}
+                        <li>
+                            <label class="mt-2" for="msg">Your message:</label>
+                        </li>
+                        <li>
+                            <textarea name="message" id="msg" cols="100" class="form-control" rows="15">{{formData.message}} </textarea>
+                        </li>
+                        {{#filter arrWarnings 'message'}}
+                        <p class="warning">{{msg}}</p>
+                        {{/filter}}
+                        <li class="button">
+                            <button type="submit" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Send Message</button>
+                        </li>
+                    </ul>
+                </form>
+        </main>

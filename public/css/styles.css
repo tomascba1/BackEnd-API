@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-family: "Roboto";
+}
+main{
+  margin-left: 25px;
+  margin-right: 25px;
+}
+body{
+  display:flex; 
+  flex-direction:column;
+  justify-content: space-between;
+  height: 100vh;
+}
+    
+/* ESTILADO DEL HEADER */
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: grey;
+}
+nav{
+  align-self: flex-end;
+  margin-bottom: 25px;
+  width: auto;
+}
+nav ul li{
+    list-style: none;
+    justify-self: center;
+    display: inline;
+    font-size: 18px;
+    padding: 5px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: black;
+}
+nav ul li a:hover{
+    text-decoration: underline;
+}
+.nav-social-media {
+    display: flex;
+    width: 150px;
+    justify-content: space-around;
+}
+.nav-social-media a{
+    color: black;
+}
+
+/* ESTILADO DE REGISTER CONTACT/REGISTER PAGE */
+.login-container{
+  margin-top: -300px;
+}
+
+.contact {
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+form {
+    margin: 0 auto;
+    width: 500px;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  form li + li {
+    margin-top: .7em;
+  }
+  
+  label {
+    display: inline-block;
+    width: 150px;
+    text-align: left;
+  }
+  
+  input, textarea {
+    font: 1em "Roboto";
+    width: 400px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+  }
+  
+  input:focus, textarea:focus {
+    border-color: #000;
+  }
+  
+  textarea {
+    vertical-align: top;
+    height: 5em;
+  }
+
+  .button {
+    align-content: center;
+}
+
+.iframe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px auto;
+}
+
+.no-auth{
+width: 600px;
+}
+.secret{
+width: 500px;
+}
+.warning{
+  color: red;
+  margin-bottom: 0px;
+  font-size: 0.92em;
+}
+.footer{
+  align-self: flex-end;
+  width: 100%;
+  background-color: #999;
+  min-height: 100px;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.blockquote-footer::before{
+  content: "";
+}
+.secret-container{
+  margin-top: -450px;
+}
+.success{
+  font-size: 18px;
+  font-weight: 600;
+  color: green
+}

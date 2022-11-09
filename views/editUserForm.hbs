@@ -1,0 +1,60 @@
+{{>header}}
+<h1 class="text-center">Account information</h1>
+<p>Last modification {{user.updatedAt}}</p>
+{{#if user.validated}}
+<p>Account validated</p>
+{{else}}
+<p>Account not validated. <a href="/users/validate">Click here to validate</a></p>
+{{/if}}
+<form action="/users/settings" method="POST">
+    <ul>
+        <li>    
+            <label class="mt-2" for="name">Name:</label>
+        </li>
+        <li>
+            <input type="text" id="name" name="name" class="form-control" value="{{user.name}}">
+        </li>
+        <li>    
+            <label class="mt-2" for="lastName">Last Name:</label>
+        </li>
+        <li>
+            <input type="text" id="lastName" name="lastName" class="form-control" value="{{user.lastName}}">
+        <li>    
+            <label class="mt-2" for="email">Email:</label>
+        </li>
+        <li>
+            <input type="text" id="email" name="email" class="form-control" value="{{user.email}}">
+        </li>
+        <div class="row mt-3 text-center">
+       <div class="col">
+        <li class="button">
+            <button class="btn btn-primary" type="submit">Confirm Changes</button>
+        </li>
+        </div>
+        <div class="col">
+        <li class="button">
+            <a href="/users/delete" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete account</a>
+        </li>
+        </div>
+        </div>
+    </ul>
+</form>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Need confirmation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Please be careful</p>
+            <p>This operation will delete your account</p>
+            <p>ARE YOU SURE?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <a href="/users/delete" type="button" class="btn btn-danger">Delete</a>
+          </div>
+        </div>
+      </div>
+    </div>
